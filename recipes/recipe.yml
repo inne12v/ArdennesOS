@@ -1,12 +1,12 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: template
+name: ArdennesOS
 # description will be included in the image's metadata
-description: This is my personal OS image.
+description: ArdennesOS Neupre (beta). Designed for old and new computers. Made not only for geeks, but for everyone. 
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/mate-nvidia
 image-version: 42 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -24,13 +24,24 @@ modules:
     install:
       packages:
         - micro
-        - starship
+        - papirus-icon-theme
+        - arc-theme
+        - ntfs-3g
+        - pipewire-utils
+        
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - cheese
+        - hexchat
+        - pidgin
+        - totem
+        - rhythmbox
+        - transmission-gtk
+        - parole
 
   - type: default-flatpaks
     configurations:
@@ -40,6 +51,9 @@ modules:
         install: # system flatpaks we want all users to have and not remove
           - org.mozilla.firefox
           - org.gnome.Loupe
+          - org.videolan.VLC
+          - org.gnome.Evince
+          
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
