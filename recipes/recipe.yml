@@ -1,9 +1,9 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: ArdennesOS
+name: ardennesos
 # description will be included in the image's metadata
-description: ArdennesOS Neupre (beta). Designed for old and new computers. Made not only for geeks, but for everyone. 
+description: ardennesos neupre (beta). designed for old and new computers. made not only for geeks, but for everyone. 
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/mate-nvidia
