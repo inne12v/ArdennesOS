@@ -6,7 +6,7 @@ name: ardennesos
 description: ardennesos neupre (beta). designed for old and new computers. made not only for geeks, but for everyone. 
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/mate-main
+base-image: ghcr.io/ublue-os/mate
 image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
